@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+// para poder escribir 
+//que no pueda escribir si el valor no es null
 const PrintValue = props => {
 	const [value, setValue] = useState("polla");
-	let print = "";
+    let print = "";
+    let dontwrite = null
 	//let check = 0;
-	if (value == true /*&& check == 0*/) {
-		print = "X";
+	if (value == true && dontwrite== null) {
+        print = "X";
+        dontwrite=!null;
 		//check = check + 1;
 	}
-	if (value == false /*&& check == 0*/) {
+	if (value == false && dontwrite== null) {
+        dontwrite=!null;
 		print = "O";
 		//check = check + 1;
 	}
@@ -18,8 +23,12 @@ const PrintValue = props => {
 		</div>
 	);
 };
+
+
 export default PrintValue;
 
+
 PrintValue.propTypes = {
-	value: PropTypes.bool
+    value: PropTypes.bool,
+    //winner:PropTypes.func
 };
